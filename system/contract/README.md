@@ -1,4 +1,4 @@
-# contractsystem
+# contract
 
 ## Project setup
 ```
