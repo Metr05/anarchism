@@ -14,7 +14,7 @@ var robot_fast = 99//robot.fast
 
 /*----------------------------main end---------------------------------
 *
-*   在classtable中注册类之前，需要先生命一个interpreter假身变量
+*   在classtable中注册类之前，需要先声明一个interpreter假身变量
 */
 var robot = interpreter.nativeToPseudo({});
 /*
