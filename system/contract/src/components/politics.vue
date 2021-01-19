@@ -220,11 +220,14 @@
                 ></v-switch>
                 </v-col>
             </v-row>
+            <behaviordescription></behaviordescription>
     </template>
 </div>
 </template>
 <script>
+import behaviordescription from './behaviordescription.vue'
 export default {
+  components: { behaviordescription },
     props:{
         position:String,
         dependency:String,
