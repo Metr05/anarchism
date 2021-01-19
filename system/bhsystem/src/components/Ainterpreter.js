@@ -1,6 +1,6 @@
 /*
 *   Ainterpreter is a abbr for Anarchism interpreter.It's designed for behavoir logic description , and its grammer inherit from JSX.
-*   BehavoirLogicDescription has two part of system--verb systeam and entity system.
+*   BehavoirLogicDescription has two part of system--verb system and entity system.
 *   Verb system has many kinds of acts which could precisely describe any entity operation in contract. 
 *   entity system contains all informations of entity , is stored as Class form.
 *  Ainterpreter depends on js-interpreter(nodejs)
