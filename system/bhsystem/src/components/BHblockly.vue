@@ -1,7 +1,5 @@
 <template>
-<div class="container">
-<v-blockly></v-blockly>
-</div>
+<v-blockly class="container"></v-blockly>
 </template>
 
 <script>
@@ -12,8 +10,6 @@ export default {
 </script>
 <style>
 .container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+  height: 90vh;
 }
 </style>

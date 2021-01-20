@@ -1,5 +1,14 @@
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-  <category name="逻辑" colour="#5b80a5">
+  <category name="数据" colour="#5b67a5">
+    <block type="get_entities"></block>
+    <block type="get_child"></block>
+    <block type="entities_meta"></block>
+    <block type="make_array"></block>
+  </category>
+    <category name="调试" colour="#5ba58c">
+    <block type="printf"></block>
+  </category>
+  <category name="条件" colour="#5b80a5">
     <block type="controls_if"></block>
     <block type="logic_compare">
       <field name="OP">EQ</field>
@@ -43,9 +52,7 @@
         </shadow>
       </value>
     </block>
-    <block type="controls_forEach">
-      <field name="VAR" id="#aPMbu?HDJK,YD@/`Jim">j</field>
-    </block>
+    <block type="v_foreach"></block>
     <block type="controls_flow_statements">
       <field name="FLOW">BREAK</field>
     </block>
@@ -151,6 +158,7 @@
     <block type="math_random_float"></block>
   </category>
   <category name="文本" colour="#5ba58c">
+    <block type="printf"></block>
     <block type="text">
       <field name="TEXT"></field>
     </block>
@@ -221,22 +229,6 @@
     </block>
     <block type="text_trim">
       <field name="MODE">BOTH</field>
-      <value name="TEXT">
-        <shadow type="text">
-          <field name="TEXT">abc</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="text_print">
-      <value name="TEXT">
-        <shadow type="text">
-          <field name="TEXT">abc</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="text_prompt_ext">
-      <mutation type="TEXT"></mutation>
-      <field name="TYPE">TEXT</field>
       <value name="TEXT">
         <shadow type="text">
           <field name="TEXT">abc</field>
@@ -354,5 +346,6 @@
   </category>
   <sep></sep>
   <category name="变量" colour="#a55b80" custom="VARIABLE"></category>
-  <category name="函数" colour="#995ba5" custom="PROCEDURE"></category>
+  <category name="函数" colour="#995ba5" custom="PROCEDURE">
+  </category>
 </xml>
