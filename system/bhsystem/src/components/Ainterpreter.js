@@ -60,10 +60,13 @@ var E;
                                 player_avatar = objectr['player']['avatar']
                             }else { 
                                 isFound = false
+                                player_uuid = [null]
+                                player_avatar = null
                             }
                             E = new Entity(a,b,isFound,player_uuid,player_avatar);
                         },
                         error:function (error) {
+                            E = new Entity(a,b,false,[null],null);
                             // 请求失败之后要执行的内容
                         }
                       });
