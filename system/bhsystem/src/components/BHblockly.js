@@ -3,8 +3,12 @@ import 'blockly/blocks';
 import 'blockly/javascript'; // Or the generator of your choice
 import * as Zhhans from 'blockly/msg/zh-hans';
 import axios from 'axios'
+import $ from 'jquery'
 import Ainterpreter from './Ainterpreter'
 export default {
+    props:{
+        xml_text:null
+    },
     mounted(){
         axios
             .get('./toolbox.xml')
@@ -154,10 +158,19 @@ export default {
                     oneBasedIndex : true
                 };
                 var workspace = Blockly.inject('blocklyDiv',options);
+                var xml = (xmlText!=null)?(Blockly.Xml.textToDom(this.xml_text)):null;
+                (xml!=null)?(Blockly.Xml.domToWorkspace(xml, workspace)):null;
+                var codedata;
                 workspace.addChangeListener((event)=>{
                     var code = Blockly.JavaScript.workspaceToCode(workspace);
                     document.getElementById('codeprint').value = code;
+                    var xml = Blockly.Xml.workspaceToDom(workspace);
+                    var xml_text = Blockly.Xml.domToText(xml);
+                    codedata = xml_text;
                   });
+                  $('#exportBtn').on('click',()=>{
+                    console.log(codedata)
+                  })
             })
             .catch(function (error) { // 请求失败处理
                 console.log(error);
@@ -176,6 +189,7 @@ export default {
         <div style="float:left;width:50%;height:50vh"><textarea disabled placeholder="代码" id="codeprint" style="height:100%;width: 100%;"></textarea></div>
         <div style="float:left;width:50%;height:50vh"><textarea disabled placeholder="结果" id="resultprint" style="height:100%;width: 100%;"></textarea></div>
         <button  @click="praseBtn">运行</button>
+        <button id="exportBtn">导出</button>
         </div>
     </div>
         `
